@@ -4,7 +4,7 @@ const CardList = ({ cards }) => {
   // Use a map to store unique cards based on their name
   const uniqueCardsMap = new Map();
   
-  // Iterate through the cards and add them to the map using the card's name as the key
+  // Iterate through the cards and add them to the map using the card's name as the key & check if it is in the map
   cards.forEach((card) => {
     if (!uniqueCardsMap.has(card.name)) {
       uniqueCardsMap.set(card.name, card);

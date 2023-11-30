@@ -7,11 +7,13 @@ const App = () => {
   const [filterType, setFilterType] = useState('name');
   const [filteredCards, setFilteredCards] = useState([]);
 
+  // Function to handle search and update state
   const handleSearch = (term, type) => {
     setSearchTerm(term);
     setFilterType(type);
   };
 
+  // Effect hook to fetch cards based on search term and filter type
   useEffect(() => {
     const fetchCards = async () => {
       try {
@@ -19,6 +21,7 @@ const App = () => {
           `https://api.magicthegathering.io/v1/cards?${filterType}=${searchTerm}`
         );
         const data = await response.json();
+        // Extract the array of cards from the response and update the state
         const searchResults = data.cards || [];
         setFilteredCards(searchResults);
       } catch (error) {
