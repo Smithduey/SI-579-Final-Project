@@ -29,7 +29,6 @@ const SearchBar = ({ onSearch, placeholder }) => {
         <option value="name">Name</option>
         <option value="artist">Artist</option>
         <option value="set">Set</option>
-        <option value="color">Color</option>
       </select>
       <button type="submit">Search</button>
     </form>
