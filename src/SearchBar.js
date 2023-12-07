@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 
 const SearchBar = ({ onSearch, placeholder }) => {
   
-  // State variables for search term and filter type
+  
   const [searchTerm, setSearchTerm] = useState('');
   const [filterType, setFilterType] = useState('name');
   
-  // Functions that handle changes in search input and filter dropdown
+  
   const handleChange = (e) => {
     setSearchTerm(e.target.value);
   };
