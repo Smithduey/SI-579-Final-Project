@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import SearchBar from './SearchBar';
 import CardList from './CardList';
@@ -8,15 +9,12 @@ const App = () => {
   const [filteredCards, setFilteredCards] = useState([]);
   const [key, setKey] = useState(0);
 
-  
   const handleSearch = (term, type) => {
     setSearchTerm(term);
     setFilterType(type);
-    
     setKey((prevKey) => prevKey + 1);
   };
 
- 
   useEffect(() => {
     const fetchCards = async () => {
       try {
@@ -24,7 +22,6 @@ const App = () => {
           `https://api.magicthegathering.io/v1/cards?${filterType}=${searchTerm}`
         );
         const data = await response.json();
-       
         const searchResults = data.cards || [];
         setFilteredCards(searchResults);
       } catch (error) {
@@ -33,7 +30,7 @@ const App = () => {
     };
 
     fetchCards();
-  }, [key]); 
+  }, [key]);
 
   return (
     <div>
